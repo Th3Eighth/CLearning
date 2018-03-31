@@ -9,47 +9,19 @@
  * 
  * *************************/
 
-const int USERANS = 10;
 
 
 #include <stdio.h>
 #include <stdlib.h>
 
-/********************************
- * 
- * 
- * 
- * Simple Greeter. Displays commands
- * 
- * 
- * ******************************/
-void greater(void){
-    
-    char user[2];
-    char ch;
-    printf("Four Funtion calculator\n\n");
-    printf("COMMANDS: q = quit\n");
-    
-    printf("Would you like to continue? (y/n)\n");
-    
-    fgets(user, sizeof(user), stdin);
-    sscanf(user, "%c", &ch);
-    
-    if(ch == 'N' || ch == 'n' || ch == 'q' || ch == 'Q'){
-        
-        printf("GoodBye!\n");
-        exit(1);
-    }
-        return;
-    
-    
-}
+
+
 
 //Simple leaver Displays Answer
 
-void leaver(int Answer){
+void leaver(float Answer){
     
-    printf("Your answer is %d\n", Answer);
+    printf("Your answer is %f\n", Answer);
     printf("GoodBye!\n");
     exit(1);
 }
@@ -61,7 +33,7 @@ void leaver(int Answer){
 
 int Math(void){
     
-    int answer = 0, number;
+    float answer = 0, number;
     char opp;
     char usermath[256];
     
@@ -73,7 +45,7 @@ int Math(void){
         //printf("DEBUG:TEST\n");
     
         fgets(usermath, sizeof(usermath), stdin);
-        sscanf(usermath, "%c %d", &opp, &number);
+        sscanf(usermath, "%c %f", &opp, &number);
         
             if(opp == 'q'|| opp == 'Q')
                 leaver(answer);
@@ -127,10 +99,10 @@ int main(void)
 
 {
     
-    greater();
-    printf("DEBUG: FUNCTION COMPLETED\n");
+    
+    //printf("DEBUG: FUNCTION COMPLETED\n");
     Math();
-    printf("DEBUG: FUNCTION COMPLETED\n");
+    
 
 
 return(0);    
