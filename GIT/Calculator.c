@@ -34,18 +34,30 @@ void leaver(float Answer){
 int Math(void){
     
     float answer = 0, number;
-    char opp;
+    char opp, ans;
     char usermath[256];
+    char user[256];
     
     while(1)
     {
         
+        printf("Current Result: %f\n", answer);
+        
+        printf("Would you like to clear your answer? (y/n)\n");
+    
+        fgets(user, sizeof(user), stdin);
+        sscanf(user, " %c", &ans);
+        
+        if(ans == 'Y' || ans == 'y')
+            answer = 0;
+        
+        printf("DEBUG: %f\n", answer);
         
         printf("Enter your opperand and number or Q for quit:");
         //printf("DEBUG:TEST\n");
     
         fgets(usermath, sizeof(usermath), stdin);
-        sscanf(usermath, "%c %f", &opp, &number);
+        sscanf(usermath, " %c %f", &opp, &number);
         
             if(opp == 'q'|| opp == 'Q')
                 leaver(answer);
@@ -68,7 +80,7 @@ int Math(void){
                 break;
             
             case '/' :
-                if(number == 0)
+                i1f(number == 0)
                 {
                     printf("ERROR CANNOT DIVIDE BY ZERO\n");
                     break;
@@ -98,7 +110,6 @@ int Math(void){
 int main(void)
 
 {
-    
     
     //printf("DEBUG: FUNCTION COMPLETED\n");
     Math();
