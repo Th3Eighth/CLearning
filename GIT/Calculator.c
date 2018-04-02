@@ -61,8 +61,7 @@ int Math(void){
         
             if(opp == 'q'|| opp == 'Q')
                 leaver(answer);
-    
-        //printf("DEBUG\n");
+            //printf("DEBUG\n");
     //case statement to handle the opperands
         switch(opp)
         {
@@ -80,7 +79,7 @@ int Math(void){
                 break;
             
             case '/' :
-                i1f(number == 0)
+                if(number == 0)
                 {
                     printf("ERROR CANNOT DIVIDE BY ZERO\n");
                     break;
